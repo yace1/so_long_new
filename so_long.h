@@ -6,7 +6,7 @@
 /*   By: aprosper <aprosper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 08:29:09 by aprosper          #+#    #+#             */
-/*   Updated: 2022/05/13 12:07:09 by aprosper         ###   ########.fr       */
+/*   Updated: 2022/05/16 12:40:26 by aprosper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ typedef struct display_map_util{
 	char	**str;
 	char	*map;
 	int		fd;
+	int		i;
+	int		j;
 	int		x;
 	int		y;
 	int		axe_x;
@@ -91,7 +93,7 @@ int		error_check_item(t_display_map *map);
 int		error_check_player(t_display_map *map);
 int		errors_all(t_display_map *map);
 int		exit_game_esc(int key, t_display_map *map);
-int		destroy_window(void);
+int		destroy_window(t_display_map *map);
 void	initialisation_mlx(t_display_map *map);
 void	initialisation_variables(t_display_map *map);
 int		deal_key(int key, t_display_map *map);
@@ -105,5 +107,7 @@ void	read_wall(t_display_map *map);
 void	read_collectible(t_display_map *map);
 void	read_exit(t_display_map *map);
 void	read_player(t_display_map *map);
+void	free_str(char **str, int line);
+void	free_and_exit(t_display_map *map);
 
 #endif

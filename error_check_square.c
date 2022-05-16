@@ -6,7 +6,7 @@
 /*   By: aprosper <aprosper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 17:34:08 by aprosper          #+#    #+#             */
-/*   Updated: 2022/05/13 12:10:51 by aprosper         ###   ########.fr       */
+/*   Updated: 2022/05/16 11:53:34 by aprosper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,9 @@ int	error_check_square(t_display_map *map)
 	if (ft_strlen(str[0]) == read_map_axe_y(map))
 	{
 		ft_printf("Error\nMap non rectangle !\n");
+		free_str(str, i);
 		exit(0);
 	}
-	free(str);
+	free_str(str, read_map_axe_y(map));
 	return (0);
 }

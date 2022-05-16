@@ -6,7 +6,7 @@
 /*   By: aprosper <aprosper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 17:33:10 by aprosper          #+#    #+#             */
-/*   Updated: 2022/05/13 15:45:53 by aprosper         ###   ########.fr       */
+/*   Updated: 2022/05/16 12:37:59 by aprosper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,43 @@
 
 int	error_check_exit(t_display_map *map)
 {
-	t_errors	errors;
+	int		fd;
+	int		i;
+	char	**str;	
 
-	errors.fd = open(map->map, O_RDONLY);
-	errors.i = 0;
-	errors.str = malloc(sizeof(char *) * read_map_axe_y(map));
-	while (errors.i < read_map_axe_y(map))
+	fd = open(map->map, O_RDONLY);
+	i = 0;
+	str = malloc(sizeof(char *) * read_map_axe_y(map));
+	while (i < read_map_axe_y(map))
 	{
-		errors.str[errors.i] = get_next_line(errors.fd);
-		if (ft_strchr(errors.str[errors.i], 'E') != NULL)
+		str[i] = get_next_line(fd);
+		if (ft_strchr(str[i], 'E') != NULL)
+		{
+			free_str(str, i);
 			return (0);
+		}	
 		else
-			errors.i++;
+			i++;
 	}
 	ft_printf("Erreur\nIl manque une sortie !\n");
-	free(errors.str);
+	free_str(str, read_map_axe_y(map));
 	exit(0);
+}
+
+void	free_str(char **str, int line)
+{
+	int	i;
+
+	i = 0;
+	while (i < line)
+	{
+		if (str[i])
+		{
+			if (str[i])
+				free(str[i]);
+		}
+		i++;
+	}
+	if (str)
+		free(str);
 }

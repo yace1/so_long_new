@@ -6,7 +6,7 @@
 /*   By: aprosper <aprosper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 17:33:53 by aprosper          #+#    #+#             */
-/*   Updated: 2022/05/13 15:46:03 by aprosper         ###   ########.fr       */
+/*   Updated: 2022/05/16 12:38:16 by aprosper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,14 @@ int	error_check_player(t_display_map *map)
 	{
 		str[i] = get_next_line(fd);
 		if (ft_strchr(str[i], 'P') != NULL)
+		{
+			free_str(str, i);
 			return (0);
+		}	
 		else
 			i++;
 	}
 	ft_printf("Erreur\nIl manque le player !\n");
-	free(str);
+	free_str(str, read_map_axe_y(map));
 	exit(0);
 }

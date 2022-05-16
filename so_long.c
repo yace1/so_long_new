@@ -6,7 +6,7 @@
 /*   By: aprosper <aprosper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 08:58:31 by aprosper          #+#    #+#             */
-/*   Updated: 2022/05/13 15:47:09 by aprosper         ###   ########.fr       */
+/*   Updated: 2022/05/16 12:13:42 by aprosper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ int	main(int argc, char **argv)
 		exit(1);
 	map.map = ft_strdup(argv[1]);
 	map.fd = open(argv[1], O_RDONLY);
-	initialisation_mlx(&map);
 	errors_all(&map);
+	initialisation_mlx(&map);
 	initialisation_variables(&map);
 	init_game(&map);
 	mlx_key_hook(map.win_ptr, deal_key, &map);
