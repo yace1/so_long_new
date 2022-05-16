@@ -13,7 +13,8 @@ SRC_LIBFT =	\
 	libft/ft_strdup.c	\
 	libft/ft_strjoin.c	\
 	libft/ft_strlen.c	\
-	libft/get_next_line.c
+	libft/get_next_line.c	\
+	libft/ft_strnstr.c
 
 SRC_LIBFT_PRINTF =	\
 	ft_printf/ft_printf.c	\

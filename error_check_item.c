@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_check_item.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aprosper <aprosper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yacinebentayeb <yacinebentayeb@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 17:33:36 by aprosper          #+#    #+#             */
-/*   Updated: 2022/05/16 12:38:09 by aprosper         ###   ########.fr       */
+/*   Updated: 2022/05/16 14:25:51 by yacinebenta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	error_check_item(t_display_map *map)
 		str[i] = get_next_line(fd);
 		if (ft_strchr(str[i], 'C') != NULL)
 		{
-			free_str(str, i);
+			free_str(str, i + 1);
 			return (0);
 		}
 		else
@@ -34,5 +34,6 @@ int	error_check_item(t_display_map *map)
 	}
 	ft_printf("Erreur\nIl manque un item !\n");
 	free_str(str, read_map_axe_y(map));
+	free (map->map);
 	exit(0);
 }

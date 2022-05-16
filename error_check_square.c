@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_check_square.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aprosper <aprosper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yacinebentayeb <yacinebentayeb@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 17:34:08 by aprosper          #+#    #+#             */
-/*   Updated: 2022/05/16 11:53:34 by aprosper         ###   ########.fr       */
+/*   Updated: 2022/05/16 14:14:46 by yacinebenta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ int	error_check_square(t_display_map *map)
 	{
 		ft_printf("Error\nMap non rectangle !\n");
 		free_str(str, i);
-		exit(0);
+		free (map->map);
+		exit (0);
 	}
 	free_str(str, read_map_axe_y(map));
 	return (0);

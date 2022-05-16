@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   deal_key.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aprosper <aprosper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yacinebentayeb <yacinebentayeb@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 17:32:38 by aprosper          #+#    #+#             */
-/*   Updated: 2022/05/13 14:24:05 by aprosper         ###   ########.fr       */
+/*   Updated: 2022/05/16 14:46:10 by yacinebenta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

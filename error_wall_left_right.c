@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_wall_left_right.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aprosper <aprosper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yacinebentayeb <yacinebentayeb@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 17:34:33 by aprosper          #+#    #+#             */
-/*   Updated: 2022/05/16 12:56:10 by aprosper         ###   ########.fr       */
+/*   Updated: 2022/05/16 14:06:39 by yacinebenta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ int	error_wall_left_right(t_display_map *map)
 			|| errors.str[errors.i][read_map_axe_x(map) - 1] != '1')
 		{
 			ft_printf("Erreur\nMur de gauche et/ou droite non conforme !\n");
-			free_str(errors.str, errors.i);
+			free_str(errors.str, read_map_axe_y(map));
+			free(map->map);
 			exit(0);
 		}
 		errors.i++;

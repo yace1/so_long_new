@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors_all.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aprosper <aprosper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yacinebentayeb <yacinebentayeb@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 17:35:24 by aprosper          #+#    #+#             */
-/*   Updated: 2022/05/13 12:01:28 by aprosper         ###   ########.fr       */
+/*   Updated: 2022/05/16 14:17:56 by yacinebenta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   catch_collectible.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aprosper <aprosper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yacinebentayeb <yacinebentayeb@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 17:32:08 by aprosper          #+#    #+#             */
-/*   Updated: 2022/05/16 12:37:03 by aprosper         ###   ########.fr       */
+/*   Updated: 2022/05/16 14:34:31 by yacinebenta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,17 @@ int	catch_collectible(int key, t_display_map *map)
 		if (map->collectible_number <= 0
 			&& map->str[map->p_y == map->exit_axe_y]
 			[map->p_x == map->exit_axe_x])
-			free (map->str);
+			free (map->map);
+			free_and_exit(map);
 		exit(0);
 	}
 	return (0);
 }
 
 /*
-	while (1)
-	{
-		sleep(1);
-		printf("%d\n", getpid());
-	}
+while (1)
+{
+	sleep(1);
+	printf("%d\n", getpid());
+}
 */

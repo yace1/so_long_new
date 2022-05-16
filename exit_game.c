@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exit_game.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aprosper <aprosper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yacinebentayeb <yacinebentayeb@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 17:35:37 by aprosper          #+#    #+#             */
-/*   Updated: 2022/05/16 12:03:03 by aprosper         ###   ########.fr       */
+/*   Updated: 2022/05/16 14:45:51 by yacinebenta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,5 @@ void	free_and_exit(t_display_map *map)
 		i++;
 	}
 	free(map->str);
-	while (1)
-	{
-		sleep(1);
-		printf("%d\n", getpid());
-	}
 	exit(0);
 }

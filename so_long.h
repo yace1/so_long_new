@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aprosper <aprosper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yacinebentayeb <yacinebentayeb@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 08:29:09 by aprosper          #+#    #+#             */
-/*   Updated: 2022/05/16 12:40:26 by aprosper         ###   ########.fr       */
+/*   Updated: 2022/05/16 15:00:24 by yacinebenta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ char	*ft_strdup(const char *str);
 char	*ft_strjoin(char *s, char c);
 char	*get_next_line(int fd);
 char	*ft_strchr(const char *str, int c);
+int		ft_strnstr(const char *big, const char *little, int len);
 //-------------------------------------------------------------------
 int		ft_printf(const char *str, ...);
 int		ft_dec_to_hexa(unsigned int nb);

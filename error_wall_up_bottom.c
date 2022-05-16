@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_wall_up_bottom.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aprosper <aprosper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yacinebentayeb <yacinebentayeb@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 17:34:54 by aprosper          #+#    #+#             */
-/*   Updated: 2022/05/16 12:54:50 by aprosper         ###   ########.fr       */
+/*   Updated: 2022/05/16 14:07:05 by yacinebenta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	error_wall_up_bottom(t_display_map *map)
 		{
 			ft_printf("Erreur\nMur haut et/ou bas non conforme !\n");
 			free_str(errors.str, errors.i);
+			free (map->map);
 			exit(0);
 		}
 		errors.j++;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aprosper <aprosper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yacinebentayeb <yacinebentayeb@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 08:58:31 by aprosper          #+#    #+#             */
-/*   Updated: 2022/05/16 12:13:42 by aprosper         ###   ########.fr       */
+/*   Updated: 2022/05/16 15:27:37 by yacinebenta      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,17 @@ static void	init_game(t_display_map *map)
 	}
 }
 
+static void check_path(t_display_map *map)
+{
+	if (map->fd == -1 || ft_strnstr(map->map, ".ber",
+		ft_strlen(map->map)) != ft_strlen(map->map) - 4)
+	{
+	ft_printf("Le chemin de la map n'est pas valide !\n");
+	free(map->map);
+	exit (0);
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	t_display_map	map;
@@ -43,6 +54,7 @@ int	main(int argc, char **argv)
 		exit(1);
 	map.map = ft_strdup(argv[1]);
 	map.fd = open(argv[1], O_RDONLY);
+	check_path(&map);
 	errors_all(&map);
 	initialisation_mlx(&map);
 	initialisation_variables(&map);
@@ -50,14 +62,13 @@ int	main(int argc, char **argv)
 	mlx_key_hook(map.win_ptr, deal_key, &map);
 	mlx_hook(map.win_ptr, 17, 1L << 0, destroy_window, &map);
 	mlx_loop(map.mlx_ptr);
-	free(map.str);
-	free(map.map);
+	free_and_exit(&map);
+	free (map.map);
 	close(map.fd);
-	mlx_destroy_image(map.mlx_ptr, map.player);
-	mlx_destroy_image(map.mlx_ptr, map.collectible);
-	mlx_destroy_image(map.mlx_ptr, map.exit);
-	mlx_destroy_image(map.mlx_ptr, map.wall);
-	mlx_destroy_image(map.mlx_ptr, map.background);
-	mlx_destroy_window(map.mlx_ptr, map.win_ptr);
 	return (0);
 }
+	// while (1)
+	// {
+	// 	sleep(1);
+	// 	printf("%d\n", getpid());
+	// }
